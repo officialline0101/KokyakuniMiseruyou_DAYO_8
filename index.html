@@ -1307,7 +1307,8 @@ function updateDisplayInfo() {
     let minutes = totalMinutes % 60;
     let totalTimeText = `<span style="${labelStyle}"><strong>所要時間</strong></span> ${hours > 0 ? hours + '時間' : ''}${minutes}分`;
 
-    const totalAmountText = `<span style="${labelStyle}"><strong>合計金額</strong></span> ¥${menuPrice + optionsPrice}`;
+    const totalAmountText = `<span style="${labelStyle}"><strong>合計金額</strong></span> ${(menuPrice + optionsPrice).toLocaleString()}円（税込）`;
+
 
     const selectedDateText = selectedFullDate
         ? `<span style="${labelStyle}"><strong>希望日時</strong></span> ${selectedFullDate}`
@@ -1356,7 +1357,6 @@ function updateDisplayInfo() {
         <hr>
     `;
         }
-
 
         // スクロール関数
         function scrollToElement(id) {
